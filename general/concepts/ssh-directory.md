@@ -3,7 +3,7 @@
 **When creating or downloading keys, you should store them in the .ssh directory.** The .ssh directory (folder) is a hidden directory (the . before name implies a directory is hidden) typically found in the user's home directory.
 
 On Linux/MAC: ``/home/your_username/.ssh``
-On Windows: ``C:\Users\your_username\\.ssh``
+On Windows: ``C:\Users\your_username\.ssh``
 
 The .ssh directory is used to hold SSH keys (and other types of keys and some other types of files such as known_hosts etc.).
 
