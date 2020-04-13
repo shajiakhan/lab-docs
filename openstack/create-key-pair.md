@@ -18,7 +18,7 @@ Create at least one key pair for each project. Create a keypair through the dash
 6. In the Create Key Pair dialog box, enter a name (best to use all lower case and no spaces) for your key pair.
 7. If available, under Key Type, choose "SSH Keys"
 8. Click Create Key Pair.
-9. The private key will be downloaded automatically.  **Warning: This will be the only time you will have the ability to downlaod the private key. ALSO, BE SURE to save the key (it will be a .pem file) into your .ssh directory.** If you have never used key based authentication before **see Notes below.**
+9. The private key will be downloaded automatically.  **Warning: This will be the only time you will have the ability to downlaod the private key. ALSO, BE SURE to save the key (it will be a .pem file) into your .ssh directory.**
 10. **To change the file permissions on the privatekey file, (so that only you can read and write to the file), navigate to the .ssh directory and run the following command:**
 ``chmod 0600 yourPrivateKey.pem`` (specify your keyname of course)
 
