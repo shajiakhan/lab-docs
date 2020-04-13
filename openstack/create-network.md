@@ -16,14 +16,14 @@ Before you can launch instances in OpenStack, you should first create a network.
    * Network Address: Specify the network address for the subnet. This identifies the entire network. Typically these are given using RFC 1918 private address classes (unless you've been specifically instructed to use a public block.). For lab assignments, you may simply use something like ``10.1.2.0/24``
    * IP Version: Select IPv4 or IPv6. In most cases, this will be IPv4 only.
    * Gateway IP: Specify an IP address for a specific gateway based on your network address. Typically, this is the first usable address in your network. For example, given the network address above, it will be ``10.1.2.1``. If nothing is specified, the first address from the network you specified earlier is used by default.
-   * Disable Gateway: -ed (select this check box to disable a gateway IP address but do it only if you don't need a gateway).
+   * Disable Gateway: Keep it Un-checked (selecting this check box will disable the gateway. Do not do it, unless you don't need one).
 7. In the Subnet Details tab:
    * Enable DHCP: Select this check box to enable DHCP.
    * Allocation Pools: Specify IP address pools. These are addresses that will be assigned to instances by the DHCP service. For lab assignments, you may choose about 50 addresses. For example, based on the network address used above, please simply enter ``10.1.2.10,10.1.2.59``. Note the comma separating the beginning and ending addresses in the DHCP scope.
-   * DNS Name Servers: Specify a name or IP address for the DNS servers. Put each entry on a new line. For lab assignments, your instructor will tell you what DNS server to use.
-   * Host Routes: Specify the IP address of host routes. In most cases this is left blank unless your instructor specifies further instructions.
+   * DNS Name Servers: Specify name(s) or IP address(es) for the DNS servers. Put each entry on a new line. **For lab assignments, your instructor will tell you what DNS server(s) to use.**
+   * Host Routes: Specify the IP address of host routes. (In most cases this is left blank unless your instructor specifies or if you need to add routes.)
 8. Click Create.
 
-The dashboard shows the network on the Networks tab.
+Done. The dashboard shows the new network on the Networks tab. You can modify certain aspects of the network and subnet by choosing the Edit option.
 
 You can also now see two different types of graphical representations of the newly created network using the "Network Topology" tab. The regular topology view and a Graph view. You can also modify the display using the buttons/options displayed on the screen.
