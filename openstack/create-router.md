@@ -5,6 +5,7 @@
 3. On the Project tab, open the Network tab and click Routers category. ** Alternatively, click on Network Topology category from the Network tab (you can also perform all the router related tasks right from the Network Topology display).
 4. Click Create Router.
 5. In the Create Router dialog box, specify a name for the router.
+   * Enable Admin State: Leave checked.
    * External Network: Select the "outside" network this router will be connected to. This is analogous to the WAN side of a typical stub router. For lab assignments, your instructor will specify the name of the external network if needed.
    * Click Create Router.
    * The new router is now displayed in the Routers tab.
