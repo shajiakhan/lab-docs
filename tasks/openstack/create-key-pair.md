@@ -8,7 +8,7 @@ You should have at least one key pair for every OpenStack project you have acces
 
 ## Add a SSH key pair
 
-Create at least one key pair for each project. Create a Key Pair through the dashboard and download and save to your .ssh directory (if you don't know what .ssh directory is, [see this first](../general/concepts/ssh-directory.md)). Be sure to set appropriate file permissions.
+Create at least one key pair for each project. Create a Key Pair through the dashboard and download and save to your .ssh directory (if you don't know what .ssh directory is, [see this first](../concepts/general/ssh-directory.md)). Be sure to set appropriate file permissions.
 
 1. Log in to the dashboard.
 2. Be sure you have selected the appropriate project from the drop down menu at the top left.
