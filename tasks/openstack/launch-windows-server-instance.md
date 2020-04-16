@@ -1,4 +1,4 @@
-# Launch an Windows Server instance
+# Launch an Windows Server instance in OpenStack
 
 The steps below apply for most use cases. Your instructor will provide specific guidance if needed.
 
@@ -13,6 +13,8 @@ You should have already:
 
 ## Launch Windows Server with a fixed IP port
 
+Log in to the OpenStack dashboard. Be sure you have selected the appropriate project from the drop down menu at the top left.
+
 1. Navigate to Project -> Compute -> Instances
 2. Click Launch Instance
 3. In the Launch Instance wizard window you will enter a series of inputs and move to the next step by clicking Next and then finish the wizard by clicking Launch.
@@ -24,22 +26,22 @@ You should have already:
    * On the Source tab:
       * Select Boot Source: Image
       * Create New Voume: No
-      * Scroll down to see list of Windows Server Images available. Click on the "Up" arrow next to the one you wish to use.
+      * Scroll down to see list of Windows Server Images available. Click on the "Up" arrow next to the one you wish to use (e.g., `Windows-Server-2019-DataCenter`).
       * Click Next
    * On the Flavor tab:
-      * Select flavor "m1.medium" (click Up arrow next to it) unless specified otherwise by your instructor. This flavor will allot 1 virtual CPU, 4GB RAM, and 30GB of hard disk space to your instance.
+      * Select flavor `m1.medium` (click Up arrow next to it) unless specified otherwise by your instructor. This flavor will allot 1 virtual CPU, 4GB RAM, and 30GB of hard disk space to your instance.
       * Click Next
    * On the Networks tab:
       * For launching a server with a static IP, you would skip this step by clicking next. We'll instead assign a port you already created.
    * On the Network Ports tab:
-      * Select the port you created from the "Available" section and move to allocated by clicking on the Up Arrow next to the port. *If you do not see a port listed under the Available section*, then please cancel the wizard, [create a port first](create-port.md), and continue again. The port's Fixed IP address will later have to be assigned as a Static IP address on the instance after the instance is launched.
+      * Select the port you created (e.g., `instancename-port`) from the "Available" section and move to allocated by clicking on the Up Arrow next to the port. *If you do not see a port listed under the Available section*, then please cancel the wizard, [create a port first](create-port.md), and continue again. The port's Fixed IP address will later have to be assigned as a Static IP address on the instance after the instance is launched.
    * On the Security Groups tab:
-      * Select the security group you created or choose Default if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated section and assign a different one. If another security group is not present in the list, you'll have to cancel wizard, create it first, and then start launch instance wizard again.
+      * Select the security group you created or choose `Default` if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated section and assign a different one. If another security group is not present in the list, you'll have to cancel wizard, create it first, and then start launch instance wizard again.
    * On the Key Pair tab:
       * Select the Key Pair you created and move to Allocated by clicking on the Up Arrow.
    * Skip through the next sections: Configurations, Server Groups, and Scheduler Hints unless specified otherwise by your instructor, by clicking next.
    * On the Metadata tab:
-      * Under the Available Metadata (left side): Type in ``admin_pass`` in the **Custom** field. Click on the + sign to move the custom metadata field to the Existing Metadata section (right side).
+      * Under the Available Metadata (left side): Type in ``admin_pass`` in the **Custom** field. Click on the **+** sign to move the custom metadata field to the Existing Metadata section (right side).
       * Then, type in the Administrator password you wish to use on your Windows Server instance. *You will use this password to login to the server*. **Be sure to choose a strong password following Windows requirements**
 4. Click Launch Instance to start the instance creation process.
 
@@ -64,7 +66,7 @@ There are a few ways to get to the console. Here are two and we recommend the se
 ### First time login (once on Windows Console)
 
 1. Because you're accessing the virtual machine console through the browser (!), you don't have access to features such as copy/paste from your computer into the virtual machine (instance) console.
-2. To login, click the button at the top right of the console that says "Send CtrlAltDel". Doing so will send the special Ctrl + Alt + Del key combination to the virtual machine.
+2. To login, click the button at the top right of the console that says `Send CtrlAltDel`. Doing so will send the special Ctrl + Alt + Del key combination to the virtual machine.
 3. The username will be `Administrator`. Login with the password you set in the "admin_pass" metadata key during instance launch. Change your password if you're prompted to do so. *Choose a strong password following Windows requirements*.
 
     >***The newly changed password will then be your administrative password.***

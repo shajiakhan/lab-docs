@@ -1,4 +1,4 @@
-# Launch an Ubuntu instance
+# Launch an Ubuntu instance in OpenStack
 
 The steps below apply for most use cases. Your instructor will provide specific guidance if needed.
 
@@ -11,6 +11,8 @@ You should have already:
 3. Configured a security group for this instance as needed unless the default security group works for your use case
 
 ## Launch Ubuntu instance with a dynamic IP address
+
+Log in to the OpenStack dashboard. Be sure you have selected the appropriate project from the drop down menu at the top left.
 
 1. Navigate to Project -> Compute -> Instances
 2. Click Launch Instance
@@ -29,11 +31,11 @@ You should have already:
       * Select flavor `m1.small` (click Up Arrow next to it) unless specified otherwise by your instructor. This flavor will allot 1 virtual CPU, 1GB RAM, and 10GB of hard disk space to your instance.
       * Click Next
    * On the Networks tab:
-      * Select the network you are launching this instance on; from the "Available" section and move it to the Allocated section by clicking on the Up Arrow next to your network (e.g., ssoid-net)
+      * Select the network you are launching this instance on; from the "Available" section and move it to the Allocated section by clicking on the Up Arrow next to your network (e.g., `ssoid-lab6`)
    * On the Network Ports tab:
       * Skip this section (in most cases, unless you need it)
    * On the Security Groups tab:
-      * Select the security group you created or choose Default if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated section and assign a different one. If another security group is not present in the list, you'll have to cancel wizard, create it first, and then start launch instance wizard again.
+      * Select the security group you created or choose `Default` if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated section and assign a different one. If another security group is not present in the list, you'll have to cancel wizard, create it first, and then start launch instance wizard again.
    * On the Key Pair tab:
       * Select the Key Pair you created and move to Allocated by clicking on the Up Arrow.
    * **Optional**: Configuration tab
@@ -42,7 +44,7 @@ You should have already:
          ```yaml
          #cloud-config
          password: mypassword #replace "mypassword" with your password
-         chpasswd: { expire: False}
+         chpasswd: { expire: False }
          ```
 
       > ***Note***: the above practice is not recommended and should be used if you are only going to access your instance through the HTML 5 console. For demo and lab assignments, it's fine to do so.

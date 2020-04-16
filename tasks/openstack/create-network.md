@@ -3,11 +3,11 @@
 Before you can launch instances in OpenStack, you should first create a network. In OpenStack, networks can provide layer 2 and 3 connectivity to instances. Conceptually, the OpenStack networks you will create work very similarly to physical networks. The steps below apply to most general use cases.
 
 1. Log in to the dashboard.
-2. Be sure you have selected the **appropriate** project from the drop down menu at the top left.
+2. Be sure you have selected the appropriate project from the drop down menu at the top left.
 3. On the Project tab, open the Network tab and click Networks category.
 4. Click Create Network.
 5. In the Create Network dialog box, specify the following values.
-   * Network Name: Specify a name to identify the network. For assignments, best to name your network as "ssoid-LABNUMBER" (replace ssoid with your ssoid and LABNUMBER with a number)
+   * Network Name: Specify a name to identify the network. For assignments, best to name your network as `ssoid-LABNUMBER` (replace ssoid with your ssoid and LABNUMBER with a number)
    * Shared: Un-check, i.e. not shared (if enabled, you will share the network with other projects. Non admin users are not allowed to set shared option.)
    * Admin State: Enabled (the state to start the network in.)
    * Create Subnet: Select this check box to create a subnet (You should create a subnet. Technically, you do not have to specify a subnet when you create a network, but if you do not specify a subnet, the network can not be attached to an instance.).
