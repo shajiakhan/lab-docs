@@ -20,7 +20,8 @@ Create at least one key pair for each project. Create a Key Pair through the das
 8. Click Create Key Pair.
 9. The private key will be downloaded automatically.  **Warning: This will be the only time you will have the ability to download the private key. ALSO, BE SURE to save the key (it will be a .pem file) into your .ssh directory.**
 10. **To change the file permissions on the private key file, (so that only you can read and write to the file), navigate to the .ssh directory and run the following command:**
-``chmod 0600 yourPrivateKey.pem`` (specify your keyname of course)
+
+    `chmod 0600 yourPrivateKey.pem` (specify your keyname of course)
 
 ## Import a key pair
 
