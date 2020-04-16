@@ -30,7 +30,7 @@ You should have already:
       * Select flavor "m1.medium" (click Up arrow next to it) unless specified otherwise by your instructor. This flavor will allot 1 virtual CPU, 4GB RAM, and 30GB of hard disk space to your instance.
       * Click Next
    * On the Networks tab:
-      * For launching a server with a static IP, you would skip this step by clickin next. We'll instead assign a port you already created.
+      * For launching a server with a static IP, you would skip this step by clicking next. We'll instead assign a port you already created.
    * On the Network Ports tab:
       * Select the port you created from the "Available" section and move to allocated by clicking on the Up Arrow next to the port. *If you do not see a port listed under the Available section*, then please cancel the wizard, [create a port first](create-port.md), and continue again. The port's Fixed IP address will later have to be assigned as a Static IP address on the instance after the instance is launched.
    * On the Security Groups tab:
@@ -54,13 +54,14 @@ You can view the instance launch progress through the Project -> Compute -> Inst
 3. Click on "Click here to show only console" to open the console in a full window. You can also open that link in a new window (Shift + click the link or right click and choose Open in New Tab/Window)
 4. Because you're accessing the virtual machine console through the browser (!), you don't have access to features such as copy/paste from your computer into the virtual machine (instance) console.
 5. To login, click the button at the top right of the console that says "Send CtrlAltDel". Doing so will send the special Ctrl + Alt + Del key combination to the virtual machine.
-6. Login with the password you set in the "admin_pass" metadata key during instance launch. Change your password if you're prompted to do so. *Choose a strong password following Windows requirements*. **The newly changed password will then be your administrative password.
+6. Login with the password you set in the "admin_pass" metadata key during instance launch. Change your password if you're prompted to do so. *Choose a strong password following Windows requirements*.
+```The newly changed password will then be your administrative password.```
 
 ## Retrieving administrative password for the instance if needed
 
 You can retrieve the current administrative password for an instance after launch if needed.
 
-1. On the Instances page, click on the drop down under Actions. Choose **Retrive Password**.
+1. On the Instances page, click on the drop down under Actions. Choose **Retrieve Password**.
 2. On the Retrieve Password window, click on browse to find your private key (from the same Key Pair you used to launch the instance). Note the private key is not sent to the server but only used in your browser.
 3. Click on Decrypt Password.
 4. The password should now show in the Password field at the bottom left.
