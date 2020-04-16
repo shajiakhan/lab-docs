@@ -66,7 +66,8 @@ There are a few ways to get to the console. Here are two and we recommend the se
 1. Because you're accessing the virtual machine console through the browser (!), you don't have access to features such as copy/paste from your computer into the virtual machine (instance) console.
 2. To login, click the button at the top right of the console that says "Send CtrlAltDel". Doing so will send the special Ctrl + Alt + Del key combination to the virtual machine.
 3. The username will be `Administrator`. Login with the password you set in the "admin_pass" metadata key during instance launch. Change your password if you're prompted to do so. *Choose a strong password following Windows requirements*.
-    > **The newly changed password will then be your administrative password.**
+
+    >***The newly changed password will then be your administrative password.***
 
 ## Retrieving administrative password for the instance if needed
 

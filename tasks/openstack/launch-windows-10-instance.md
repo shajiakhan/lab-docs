@@ -66,7 +66,7 @@ There are a few ways to get to the console. Here are two and we recommend the se
 2. To login, left click anywhere in the Windows screen **Or** click the button at the top right of the console that says "Send CtrlAltDel". Doing so will send the special Ctrl + Alt + Del key combination to the virtual machine.
 3. Login with the password you set in the "admin_pass" metadata key during instance launch. Change your password if you're prompted to do so. *Choose a strong password following Windows requirements*. Leave the username unchanged (use whatever appears by default) the first time you're logging in.
 
-```The newly changed password will then be your administrative password.```
+   >***The newly changed password will then be your administrative password.***
 
 ## Retrieving administrative password for the instance if needed
 
