@@ -1,4 +1,4 @@
-# Launch a Windows Server instance
+# Launch an Windows Server instance
 
 The steps below apply for most use cases. Your instructor will provide specific guidance if needed.
 
@@ -34,7 +34,7 @@ You should have already:
    * On the Network Ports tab:
       * Select the port you created from the "Available" section and move to allocated by clicking on the Up Arrow next to the port. *If you do not see a port listed under the Available section*, then please cancel the wizard, [create a port first](create-port.md), and continue again. The port's Fixed IP address will later have to be assigned as a Static IP address on the instance after the instance is launched.
    * On the Security Groups tab:
-      * Select the security group you created or choose Default if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated and assign a different one.
+      * Select the security group you created or choose Default if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated section and assign a different one. If another security group is not present in the list, you'll have to cancel wizard, create it first, and then start launch instance wizard again.
    * On the Key Pair tab:
       * Select the Key Pair you created and move to Allocated by clicking on the Up Arrow.
    * Skip through the next sections: Configurations, Server Groups, and Scheduler Hints unless specified otherwise by your instructor, by clicking next.

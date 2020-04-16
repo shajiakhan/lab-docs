@@ -1,4 +1,4 @@
-# Launch a Windows 10 instance
+# Launch an Windows 10 instance
 
 The steps below apply for most use cases. Your instructor will provide specific guidance if needed.
 
@@ -33,7 +33,7 @@ You should have already:
    * On the Network Ports tab:
       * Skip this section (in most cases, unless you need it)
    * On the Security Groups tab:
-      * Select the security group you created or choose Default if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated and assign a different one. If another security group is not present in the list, you'll have to cancel wizard, creat it first, and then start launch instance wizard again.
+      * Select the security group you created or choose Default if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated section and assign a different one. If another security group is not present in the list, you'll have to cancel wizard, create it first, and then start launch instance wizard again.
    * On the Key Pair tab:
       * Select the Key Pair you created and move to Allocated by clicking on the Up Arrow.
    * Skip through the next sections: Configurations, Server Groups, and Scheduler Hints unless specified otherwise by your instructor, by clicking next.
