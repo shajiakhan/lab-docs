@@ -44,7 +44,7 @@ You should have already:
 
 You can view the instance launch progress through the Project -> Compute -> Instances page. If instance status shows "Running" then everything worked.
 
-**Note: as there are certain initialization scripts that must run before the instance allows you to login, please wait at least 10 to 15 minutes before attempting to login. Just to be safe.**
+> **Note: as there are certain initialization scripts that must run before the instance allows you to login, please wait at least 10 to 15 minutes before attempting to login. Just to be safe.**
 
 ## Accessing your Windows 10 instance through the browser console
 
@@ -77,4 +77,4 @@ You can retrieve the current administrative password for an instance after launc
 3. Click on Decrypt Password.
 4. The password should now show in the Password field at the bottom left.
 
-**Note:** if an encrypted password is not displayed on the Retrieve Password window then it means that there was no password set during launch or after launch. In this case, there is no way to retrieve the password for Windows instances. You will have to launch a new instance and delete the one without the password. (For Linux instances, however, you should still be able to connect to the Linux instances using your key (via SSH)).
+> **Note:** if an encrypted password is not displayed on the Retrieve Password window then it means that there was no password set during launch or after launch. In this case, there is no way to retrieve the password for Windows instances. You will have to launch a new instance and delete the one without the password. (For Linux instances, however, you should still be able to connect to the Linux instances using your key (via SSH)).
