@@ -32,8 +32,8 @@ This lab will help you get familiar with the OpenStack based lab environment.
 2. Enter your User Name and Password provided by the instructor/sysadmin and click on login.
 3. You should now see the OpenStack Horizon Dashboard.
 4. Familiarize with the OpenStack Horizon Dashboard
-   a. On the left-hand side will be several drop-down menus.
-   b. Spend a few minutes navigating through the menus to become familiar with where to find various functions you may want to perform
+   * On the left-hand side will be several drop-down menus.
+   * Spend a few minutes navigating through the menus to become familiar with where to find various functions you may want to perform
 
 ## Lab Task 2: Launch an instance
 
