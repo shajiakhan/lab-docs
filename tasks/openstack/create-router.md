@@ -6,7 +6,7 @@
 4. Click Create Router.
 5. In the Create Router dialog box, specify a name for the router.
    * Enable Admin State: Leave checked.
-   * External Network: Select the "outside" network this router will be connected to. This is analogous to the WAN side of a typical stub router. For lab assignments, your instructor will specify the name of the external network if needed.
+   * External Network: Select the "outside" network this router will be connected to. This is analogous to the WAN side of a typical stub router. For lab assignments, your instructor will specify the name of the external network if needed. If you are making internal networks without outside connectivity, or wish to interconnect multiple private networks together, then you may simply leave the External Network selection blank.
    * Click Create Router.
    * The new router is now displayed in the Routers tab.
 
