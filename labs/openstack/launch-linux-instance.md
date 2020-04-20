@@ -9,11 +9,11 @@ This lab will help you get familiar with the OpenStack based lab environment.
 1. Basic understanding of an Infrastructure as a Service (IaaS) cloud management platform such as OpenStack
 2. Familiarity with the “Horizon” self-service dashboard interface accessible through the browser
 3. Ability to launch a simple test virtual machine instance
-   a. Creating key-pair
-   b. Selecting “flavors”
-   c. Use a cloud-init injection script to allow the user to login to the instance from the browser console
-   d. Creating a network on which the instance will be launched
-   e. Accessing the Virtual Machine through the browser using HTML 5 consoles
+   * Creating key-pair
+   * Selecting “flavors”
+   * Use a cloud-init injection script to allow the user to login to the instance from the browser console
+   * Creating a network on which the instance will be launched
+   * Accessing the Virtual Machine through the browser using HTML 5 consoles
 
 ### Prerequisites
 
@@ -86,4 +86,11 @@ With all the steps above, you're now ready to launch a Linux instance. Use the f
 
 ## Access your instance through the browser using HTML 5 console (noVNC)
 
-The launch insance instructions (link above) provides details on how to access your instance through the browser itself. Once at the console, you click in the console are and then start typing. You can login with the username `ubuntu` and the password you set in the configuration script during launch!
+The launch insance instructions (link above) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing. You can login with the username `ubuntu` and the password you set in the configuration script during launch!
+
+## Cleaning up after you're done
+
+1. Shutdown and Delete the Ubuntu instance
+2. Delete each of the interfaces on your router
+3. Delete the router itself
+4. Delete the network you created (you may have to ensure you delete all ports on this network first if you get an error message when trying to delete the network)
