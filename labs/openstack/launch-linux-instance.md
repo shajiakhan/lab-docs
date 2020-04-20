@@ -72,9 +72,9 @@ Use the following values/inputs [while following the instructions here](../../ta
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
-## Launch a Linux instance
+## Launch an Linux instance
 
-With all the steps above, you're now ready to launch a Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+With all the steps above, you're now ready to launch an Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `server1`
 2. Source Image: `Ubuntu-18-04` (no volumes)
@@ -86,11 +86,11 @@ With all the steps above, you're now ready to launch a Linux instance. Use the f
 
 ## Access your instance through the browser using HTML 5 console (noVNC)
 
-The launch insance instructions (link above) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing. You can login with the username `ubuntu` and the password you set in the configuration script during launch!
+The launch [instance instructions](../../tasks/openstack/launch-ubuntu-instance.md#accessing-your-ubuntu-instance-through-the-browser-console) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing. You can login with the username `ubuntu` and the password you set in the configuration script during launch!
 
 ## Cleaning up after you're done
 
-1. Shutdown and Delete the Ubuntu instance
+1. Shutdown and delete the instance
 2. Delete each of the interfaces on your router
 3. Delete the router itself
 4. Delete the network you created (you may have to ensure you delete all ports on this network first if you get an error message when trying to delete the network)
