@@ -2,7 +2,7 @@
 
 ## Lab Purpose
 
-This lab will help you get started with understanding internetworking (i.e. connecting two or more networks together and moving Layer 3 datagrams between networks). It will also help you understand that routing begins at hosts as each host must decide what to do with an outgoing Layer 3 datagram.
+This lab will help you get started with understanding internetworking (i.e. connecting two or more networks together and moving Layer 3 datagrams between networks). It will also help you understand that routing begins at hosts as each host must decide what to do with outgoing Layer 3 datagram.
 
 ### Learning Outcomes
 
@@ -28,7 +28,7 @@ This lab will help you get started with understanding internetworking (i.e. conn
 
 ## Create first network
 
-You'll create a private network on which you'll launch your instances. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. An example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
+You'll create a private network on which you'll launch your instances. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
 
 Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
 
@@ -46,7 +46,7 @@ Use the following values/inputs [while following the instructions here](../../ta
 
 ## Create second network
 
-You'll create a private network on which you'll launch your instances. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. An example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
+You'll create a private network on which you'll launch your instances. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
 
 Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
 
@@ -68,7 +68,7 @@ Use the following values/inputs [while following the instructions here](../../ta
 
 1. Router name: `router-1`
 2. External Network: LEAVE BLANK
-3. Add an interface to this router on your `network-1-subnet`:
+3. Add interface to this router on your `network-1-subnet`:
    * IP Address: `192.168.1.1` (this will be the gateway for all instances launched in your network-1-subnet)
 4. Add a second interface to this router on your `network-2-subnet`:
    * IP Address: `192.168.2.1` (this will be the gateway for all instances launched in your network-2-subnet)
@@ -79,9 +79,9 @@ Use the following values/inputs [while following the instructions here](../../ta
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
-## Launch an Linux instance; "machine-A" on network-1
+## Launch Linux instance; "machine-A" on network-1
 
-With all the steps above, you're now ready to launch an Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-A`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -91,9 +91,9 @@ With all the steps above, you're now ready to launch an Linux instance. Use the 
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
 7. IMPORTANT - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
 
-## Launch an Linux instance; "machine-B" on network-1
+## Launch Linux instance; "machine-B" on network-1
 
-With all the steps above, you're now ready to launch an Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-B`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -103,9 +103,9 @@ With all the steps above, you're now ready to launch an Linux instance. Use the 
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
 7. IMPORTANT - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
 
-## Launch an Linux instance; "machine-C" on network-2
+## Launch Linux instance; "machine-C" on network-2
 
-With all the steps above, you're now ready to launch an Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-C`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -137,10 +137,10 @@ Examine how hosts within the same network (here machine-A and machine-B communic
 
 ## Cleaning up after you're done
 
-1. Shutdown and delete the instance
+1. Shutdown and delete the instances
 2. Delete each of the interfaces on your router
 3. Delete the router itself
-4. Delete the network you created (you may have to ensure you delete all ports on this network first if you get an error message when trying to delete the network)
+4. Delete the network you created (you may have to ensure you delete all ports on this network first if you get error message when trying to delete the network)
 
 ## Learning Check - Why this works?
 
