@@ -6,7 +6,7 @@ This lab will help you get started with understanding internetworking (i.e. conn
 
 ### Learning Outcomes
 
-1. Basic understanding of virtual networkign in cloud environments such as OpenStack
+1. Basic understanding of virtual networking in cloud environments such as OpenStack
 2. Create and deploy IP networks.
 3. Create and configure routers to interconnect networks.
 4. Describe routing process as initiating at the host
@@ -24,7 +24,9 @@ This lab will help you get started with understanding internetworking (i.e. conn
 1. Familiarity with virtualization concepts and basic working knowledge of Linux command line will be beneficial but not required.
 2. Understanding of Network Addresses, Dynamic versus Static IP configuration of hosts, and theory on decision making at hosts and routers as they decide how to forward Layer 3 datagrams.
 
-## Lab Task 1: Create first network
+>**Note**: you can finish most of the tasks (except Key Pair generation) below from the Network Topology view in the OpenStack Dashboard (Project->Network->Network Topology). The Graph view with "Toggle Labels" will present a nice picture of what you're building. It's a great way to understand networking concepts!
+
+## Create first network
 
 You'll create a private network on which you'll launch your instances. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. An example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
 
@@ -42,7 +44,7 @@ Use the following values/inputs [while following the instructions here](../../ta
       3. DNS SERVER: (not needed, leave blank; as these are test networks with no outside connectivity)
       4. Rest of the configuration either blank or default
 
-## Lab Task 2: Create second network
+## Create second network
 
 You'll create a private network on which you'll launch your instances. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. An example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
 
@@ -71,7 +73,7 @@ Use the following values/inputs [while following the instructions here](../../ta
 4. Add a second interface to this router on your `network-2-subnet`:
    * IP Address: `192.168.2.1` (this will be the gateway for all instances launched in your network-2-subnet)
 
-## Create a SSH Key Pair and download to save in your .ssh directory
+## (If you don't already have a Key Pair setup): Create a SSH Key Pair and download to save in your .ssh directory
 
 Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
 
@@ -108,7 +110,7 @@ With all the steps above, you're now ready to launch an Linux instance. Use the 
 1. Instance name: `machine-A`
 2. Source Image: `Ubuntu-16-04` (no volumes)
 3. Flavor: `m1.nano`
-4. Network: `network-1` (you created this network earlier;)
+4. Network: `network-2` (you created this network earlier;)
 5. Security Group: `Default` (no need to create one, this is already present. Every OpenStack project comes with a Default security group that blocks all incoming traffic to the instances in that group and allows all outgoing traffic.)
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
 7. IMPORTANT - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
