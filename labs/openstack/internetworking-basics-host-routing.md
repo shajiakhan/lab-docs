@@ -32,7 +32,7 @@ You'll create private networks on which you'll launch your instances and router(
 
 ### Create first network - "network-1"
 
-Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
+Use the below values/inputs [while following the instructions for creating a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `network-1` (just a name, always try to give descriptive names to your cloud resources)
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
