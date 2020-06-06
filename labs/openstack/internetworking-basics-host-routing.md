@@ -26,11 +26,13 @@ This lab will help you get started with understanding internetworking (i.e. conn
 
 >**Note**: you can finish most of the tasks (except Key Pair generation) below from the Network Topology view in the OpenStack Dashboard (Project->Network->Network Topology). The Graph view with "Toggle Labels" will present a nice picture of what you're building. It's a great way to understand networking concepts!
 
-## Create first network
+## Create your networks
 
-You'll create a private network on which you'll launch your instances. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
+You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IPv4 addresses and network addresses appears below. You may choose your own network addresses if you wish (it'll be good practice).
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
+### Create first network - "network-1"
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `network-1` (just a name, always try to give descriptive names to your cloud resources)
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
@@ -44,11 +46,9 @@ Use the following values/inputs [while following the instructions here](../../ta
       3. DNS SERVER: (not needed, leave blank; as these are test networks with no outside connectivity)
       4. Rest of the configuration either blank or default
 
-## Create second network
+### Create second network - "network-2"
 
-You'll create a private network on which you'll launch your instances. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
-
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `network-2`
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
@@ -64,7 +64,7 @@ Use the following values/inputs [while following the instructions here](../../ta
 
 ## Create a router that connects network-1 with network-2
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-router.md).
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-router.md).
 
 1. Router name: `router-1`
 2. External Network: LEAVE BLANK
@@ -73,15 +73,17 @@ Use the following values/inputs [while following the instructions here](../../ta
 4. Add a second interface to this router on your `network-2-subnet`:
    * IP Address: `192.168.2.1` (this will be the gateway for all instances launched in your network-2-subnet)
 
-## (If you don't already have a Key Pair setup): Create a SSH Key Pair and download to save in your .ssh directory
+## Launch Your Instances
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
+### (If you don't already have a Key Pair setup): Create a SSH Key Pair and download to save in your .ssh directory
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
-## Launch Linux instance; "machine-A" on network-1
+### Launch Linux instance; "machine-A" on network-1
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-A`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -91,9 +93,9 @@ Use the following values/inputs [while following the instructions here](../../ta
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
 7. IMPORTANT - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
 
-## Launch Linux instance; "machine-B" on network-1
+### Launch Linux instance; "machine-B" on network-1
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-B`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -103,9 +105,9 @@ Use the following values/inputs [while following the instructions here](../../ta
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
 7. IMPORTANT - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
 
-## Launch Linux instance; "machine-C" on network-2
+### Launch Linux instance; "machine-C" on network-2
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-C`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -135,14 +137,11 @@ Ping from machine-B to machine-C and vice-versa
 
 Examine how hosts within the same network (here machine-A and machine-B communicate) at Layer 3. Similarly, examine how hosts send the Layer 3 datagrams to the default gateway for moving packets across networks. Complete the assigned readings.
 
-## Cleaning up after you're done
+## Learning Check - "Why this works?"
 
-1. Shutdown and delete the instances
-2. Delete each of the interfaces on your router
-3. Delete the router itself
-4. Delete the network you created (you may have to ensure you delete all ports on this network first if you get error message when trying to delete the network)
+>Let's take the figure below to discuss this lab. **Your setup in terms of IP addresses may be different**.
 
-## Learning Check - Why this works?
+![Example setup for lab discussion](../../assets/images/three-networks-two-routers-example.png)
 
 ### machine-A and machine-B connectivity
 
@@ -179,3 +178,12 @@ So, routing for a packet going from machine-A to machine-C works as follows:
 #### Expand your knowledge - compare routing tables
 
 Examine Routing Tables of both machine-A and machine-C. Please study the row(s) in the routing table and understand how the default routes help the machines send the packets to their router (gateway) when the destination IP addresses of any packets are not on the same network as the machines themselves.
+
+## Cleanup cloud resources after you're done
+
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. When deleting resources you have to follow a certain order (typically the reverse of how you created them...). For example, in the setup above, we'd have to shutdown and delete the instances first, then delete the interfaces on the router(s), then delete the router(s). Deleting a router with existing interfaces will not work.... and so on. Do the following in order listed.
+
+1. Shutdown and delete your instances
+2. Delete the interfaces on the router(s)
+3. Delete the router(s)
+4. Delete the network(s) you created (you may have to ensure you delete all ports on this network first if you get error message when trying to delete the network)
