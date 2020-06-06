@@ -213,7 +213,7 @@ These machines are on the same network as both the following are true:
 1. They are connected into the same layer 2 network. Think of the physical switch analogy. In OpenStack you put both the machines on the same internal network called network-1. This would be analogous to we plugging the machines’ network cables to a switch.
 2. They are on the same layer 3 network. Think both machine-A and machine-B have IPv4 addresses from the same IP network. That is, both machines’ IP addresses have the same network address prefix. In the example, machine-A’s IP 192.168.1.2/24 and machine-B’s IP 192.168.1.3/24 are on the same network address 192.168.1.0/24. Then you used ping (a small program used to send some arbitrary data to another machine and see if it responds) as the “application” sending/receiving data.
 
-#### Expand your knowledge
+#### Expand your knowledge - 1
 
 Examine Routing Tables of both machine-A and machine-B
 Use any of the following commands on the command prompt of the instances:
@@ -240,7 +240,7 @@ So, routing for a packet going from machine-A to machine-C works as follows:
 * Based on the static route, router-1 knows that to get to the 192.168.3.0/24 network, it must send the Layer 3 datagram to 192.168.2.251 which is the Next Hop. Thus, it forwards that packet out of its second interface toward 192.168.2.251.
 * The Layer 3 datagram then arrives at router-2 which examines the destination IP (again it's machine-C's IP; 192.168.3.2). The router-2 looks at its routing table and finds the directly connected route that matches all IP addresses in the 192.168.3.0/24. It looks at the outgoing interface in that route and simply sends it out of that interface (here the second interface connected to network-3) toward machine-C.
 
-#### Expand your knowledge - compare routing tables
+#### Expand your knowledge -2
 
 * See if you can trace the steps back from machine-C to machine-A similar to the steps given for machine-A to machine-C above.
 * Examine Routing Tables of both machine-A and machine-C. Please study the row(s) in the routing table and understand how the default routes help the machines send the packets to their router (gateway) whenever the destination IP address of a Layer 3 datagram is not on the same network as the machines themselves.
