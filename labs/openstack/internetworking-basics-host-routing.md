@@ -28,11 +28,11 @@ This lab will help you get started with understanding internetworking (i.e. conn
 
 ## Create your networks
 
-You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IPv4 addresses and network addresses appears below. You may choose your own network addresses if you wish (it'll be good practice).
+You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
+
+>Use the below values/inputs [while following the instructions on creating a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
 
 ### Create first network - "network-1"
-
-Use the below values/inputs [while following the instructions for creating a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `network-1` (just a name, always try to give descriptive names to your cloud resources)
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
@@ -47,8 +47,6 @@ Use the below values/inputs [while following the instructions for creating a net
       4. Rest of the configuration either blank or default
 
 ### Create second network - "network-2"
-
-Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `network-2`
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
