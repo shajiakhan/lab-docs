@@ -204,7 +204,7 @@ Examine how hosts within the same network (here machine-A and machine-B communic
 
 >Let's take the figure below to discuss this lab. **Your setup in terms of IP addresses may be different**.
 
-![Example setup for lab discussion](../../assets/images/two-networks-one-router-example.png)
+![Example setup for lab discussion](../../assets/images/three-networks-two-routers-example.png)
 
 ### machine-A and machine-B connectivity
 
@@ -240,7 +240,7 @@ So, routing for a packet going from machine-A to machine-C works as follows:
 * Based on the static route, router-1 knows that to get to the 192.168.3.0/24 network, it must send the Layer 3 datagram to 192.168.2.251 which is the Next Hop. Thus, it forwards that packet out of its second interface toward 192.168.2.251.
 * The Layer 3 datagram then arrives at router-2 which examines the destination IP (again it's machine-C's IP; 192.168.3.2). The router-2 looks at its routing table and finds the directly connected route that matches all IP addresses in the 192.168.3.0/24. It looks at the outgoing interface in that route and simply sends it out of that interface (here the second interface connected to network-3) toward machine-C.
 
-#### Expand your knowledge -2
+#### Expand your knowledge - 2
 
 * See if you can trace the steps back from machine-C to machine-A similar to the steps given for machine-A to machine-C above.
 * Examine Routing Tables of both machine-A and machine-C. Please study the row(s) in the routing table and understand how the default routes help the machines send the packets to their router (gateway) whenever the destination IP address of a Layer 3 datagram is not on the same network as the machines themselves.

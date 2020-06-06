@@ -141,7 +141,7 @@ Examine how hosts within the same network (here machine-A and machine-B communic
 
 >Let's take the figure below to discuss this lab. **Your setup in terms of IP addresses may be different**.
 
-![Example setup for lab discussion](../../assets/images/three-networks-two-routers-example.png)
+![Example setup for lab discussion](../../assets/images/two-networks-one-router-example.png)
 
 ### machine-A and machine-B connectivity
 
