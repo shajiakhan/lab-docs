@@ -73,17 +73,17 @@ Use the below values/inputs [while following the instructions here](../../tasks/
 4. Add a second interface to this router on your `network-2-subnet`:
    * IP Address: `192.168.2.1` (this will be the gateway for all instances launched in your network-2-subnet)
 
-## Launch Your Instances
+## Create Key Pair (if needed)
 
-### (If you don't already have a Key Pair setup): Create a SSH Key Pair and download to save in your .ssh directory
-
-Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
+If you don't already have a Key Pair setup, create a SSH Key Pair and download to save in your .ssh directory. Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
-### Launch Linux instance; "machine-A" on network-1
+## Launch Your Instances
 
-Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+>Use the below values/inputs [while following the instructions for launching a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).
+
+### Launch Linux instance; "machine-A" on network-1
 
 1. Instance name: `machine-A`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -95,8 +95,6 @@ Use the below values/inputs [while following the instructions here](../../tasks/
 
 ### Launch Linux instance; "machine-B" on network-1
 
-Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
-
 1. Instance name: `machine-B`
 2. Source Image: `Ubuntu-16-04` (no volumes)
 3. Flavor: `m1.nano`
@@ -106,8 +104,6 @@ Use the below values/inputs [while following the instructions here](../../tasks/
 7. IMPORTANT - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
 
 ### Launch Linux instance; "machine-C" on network-2
-
-Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-C`
 2. Source Image: `Ubuntu-16-04` (no volumes)
