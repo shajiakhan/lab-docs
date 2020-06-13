@@ -68,13 +68,15 @@ Use the following values/inputs [while following the instructions here](../../ta
 
 ## Create a SSH Key Pair and download to save in your .ssh directory
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
+If you don't already have a Key Pair setup, create a SSH Key Pair and download to save in your .ssh directory. Use the below values/inputs [while following the instructions on how to create a key pair in OpenStack Dashboard here](../../tasks/openstack/create-key-pair.md).
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
 ## Launch an Linux instance
 
-With all the steps above, you're now ready to launch an Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+With all the steps above, you're now ready to launch an Linux instance. 
+
+>Use the below values/inputs [while following the instructions on how to launch a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `server1`
 2. Source Image: `Ubuntu-18-04` (no volumes)
@@ -88,9 +90,6 @@ With all the steps above, you're now ready to launch an Linux instance. Use the 
 
 The launch [instance instructions](../../tasks/openstack/launch-ubuntu-instance.md#accessing-your-ubuntu-instance-through-the-browser-console) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing. You can login with the username `ubuntu` and the password you set in the configuration script during launch!
 
-## Cleaning up after you're done
+## Cleanup cloud resources after you're done
 
-1. Shutdown and delete the instance
-2. Delete each of the interfaces on your router
-3. Delete the router itself
-4. Delete the network you created (you may have to ensure you delete all ports on this network first if you get an error message when trying to delete the network)
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../tasks/openstack/clean-up-resources.md) if needed.

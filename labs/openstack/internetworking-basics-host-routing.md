@@ -30,7 +30,7 @@ This lab will help you get started with understanding internetworking (i.e. conn
 
 You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
 
->Use the below values/inputs [while following the instructions on creating a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
+>Use the below values/inputs [while following the instructions on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
 
 ### Create first network - "network-1"
 
@@ -62,7 +62,7 @@ You'll create private networks on which you'll launch your instances and router(
 
 ## Create a router that connects network-1 with network-2
 
-Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-router.md).
+Use the below values/inputs [while following the instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md).
 
 1. Router name: `router-1`
 2. External Network: LEAVE BLANK
@@ -73,13 +73,13 @@ Use the below values/inputs [while following the instructions here](../../tasks/
 
 ## Create Key Pair (if needed)
 
-If you don't already have a Key Pair setup, create a SSH Key Pair and download to save in your .ssh directory. Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
+If you don't already have a Key Pair setup, create a SSH Key Pair and download to save in your .ssh directory. Use the below values/inputs [while following the instructions on how to create a key pair in OpenStack Dashboard here](../../tasks/openstack/create-key-pair.md).
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
 ## Launch Your Instances
 
->Use the below values/inputs [while following the instructions for launching a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).
+>Use the below values/inputs [while following the instructions on how to launch a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 ### Launch Linux instance; "machine-A" on network-1
 
@@ -175,9 +175,4 @@ Examine Routing Tables of both machine-A and machine-C. Please study the row(s) 
 
 ## Cleanup cloud resources after you're done
 
-It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. When deleting resources you have to follow a certain order (typically the reverse of how you created them...). For example, in the setup above, we'd have to shutdown and delete the instances first, then delete the interfaces on the router(s), then delete the router(s). Deleting a router with existing interfaces will not work.... and so on. Do the following in order listed.
-
-1. Shutdown and delete your instances
-2. Delete the interfaces on the router(s)
-3. Delete the router(s)
-4. Delete the network(s) you created (you may have to ensure you delete all ports on this network first if you get error message when trying to delete the network)
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../tasks/openstack/clean-up-resources.md) if needed.
