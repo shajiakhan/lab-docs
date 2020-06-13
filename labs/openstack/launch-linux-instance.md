@@ -43,7 +43,7 @@ Launching an instance requires certain prerequisite steps. In OpenStack you laun
 
 You'll create your own private network on which you'll launch your instance. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. For this lab, please choose the following if you are not familiar with private IP addresses and/or network addresses for IPv4.
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
+>Use the below values/inputs [while following the instructions on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `ssoid-test` (replace with your ssoid or username)
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
@@ -59,7 +59,7 @@ Use the following values/inputs [while following the instructions here](../../ta
 
 ## Create a router that connects your network with an "external" network for Internet access
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-router.md).
+>Use the below values/inputs [while following the instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md).
 
 1. Router name: `ssoid-router` (replace with your ssoid or username)
 2. External Network: Choose the external network (`Your instructor will provide you with the name of the external network`. Simply, choosing this network as your "external" network means your router will have an interface on this network much like your home router connects to your Internet Service Provider's network).
@@ -92,4 +92,4 @@ The launch [instance instructions](../../tasks/openstack/launch-ubuntu-instance.
 
 ## Cleanup cloud resources after you're done
 
-It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../tasks/openstack/clean-up-resources.md) if needed.
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.

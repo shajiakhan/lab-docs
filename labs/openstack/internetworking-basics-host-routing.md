@@ -175,4 +175,4 @@ Examine Routing Tables of both machine-A and machine-C. Please study the row(s) 
 
 ## Cleanup cloud resources after you're done
 
-It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../tasks/openstack/clean-up-resources.md) if needed.
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.

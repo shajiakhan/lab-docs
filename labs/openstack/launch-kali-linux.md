@@ -42,7 +42,7 @@ Launching an instance requires certain prerequisite steps. In OpenStack you laun
 
 You'll create your own private network on which you'll launch your instance. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. For this lab, please choose the following if you are not familiar with private IP addresses and/or network addresses for IPv4.
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
+>Use the below values/inputs [while following the instructions on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `ssoid-net` (replace with your ssoid or username)
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
@@ -58,7 +58,7 @@ Use the following values/inputs [while following the instructions here](../../ta
 
 ### Create a router that connects your network with an "external" network for Internet access
 
-Use the following values/inputs [while following the instructions here](../../tasks/openstack/create-router.md).
+>Use the below values/inputs [while following the instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md).
 
 1. Router name: `ssoid-router` (replace with your ssoid or username)
 2. External Network: Choose the external network (`Your instructor will provide you with the name of the external network`). Simply, choosing this network as your "external" network means your router will have an interface on this network much like your home router connects to your Internet Service Provider's network).
@@ -81,6 +81,7 @@ With all the steps above, you're now ready to launch a Kali Linux instance. Use 
 4. Network: `ssoid-net` (you created this network earlier;)
 5. Security Group: `Default` (no need to create one, this is already present. Every OpenStack project comes with a Default security group that blocks all incoming traffic to the instances in that group and allows all outgoing traffic.)
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
+7. IMPORTANT: **SKIP** the section on configuration script for setting password listed in the instructions link above. The default password is already set on the Kali image and listed below.
 
 ## Access your instance through the browser using HTML 5 console (noVNC)
 
@@ -95,4 +96,4 @@ You can login with:
 
 ## Cleanup cloud resources after you're done
 
-It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../tasks/openstack/clean-up-resources.md) if needed.
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.

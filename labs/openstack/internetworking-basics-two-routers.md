@@ -33,7 +33,7 @@ Upon completion of this lab, you will be able to:
 
 You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
 
->Use the below values/inputs [while following the instructions  on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
+>Use the below values/inputs [while following the instructions on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
 
 ### Create first network - "network-1"
 
@@ -247,4 +247,4 @@ So, routing for a packet going from machine-A to machine-C works as follows:
 
 ## Cleanup cloud resources after you're done
 
-It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../tasks/openstack/clean-up-resources.md) if needed.
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.
