@@ -1,12 +1,12 @@
-# Internetworking basics - routing begins at hosts - Connecting two networks with one router
+# Internetworking basics - routing begins at hosts - Connecting two networks with one router in VirtualBox
 
 ## Lab Purpose
 
-This lab will help you get started with understanding internetworking (i.e. connecting two or more networks together and moving Layer 3 datagrams between networks). It will also help you understand that routing begins at hosts as each host must decide what to do with outgoing Layer 3 datagram.
+This lab will help you get started with understanding internetworking (i.e. connecting two or more networks together and moving Layer 3 datagrams between networks). It will also help you understand that routing begins at hosts as each host must decide what to do with outgoing Layer 3 datagram. We'll implement this lab in VirtualBox but a similar setup can be made using physical machines or [in cloud environments](../openstack/internetworking-basics-host-routing.md).
 
 ### Learning Outcomes
 
-1. Basic understanding of virtual networking in cloud environments such as OpenStack
+1. Basic understanding of virtualized networks using hypervisors such as VirtualBox
 2. Create and deploy IP networks.
 3. Create and configure routers to interconnect networks.
 4. Describe routing process as initiating at the host
@@ -16,23 +16,24 @@ This lab will help you get started with understanding internetworking (i.e. conn
 
 #### Environment
 
-1. You should have already received instructions on logging into the lab environment from your instructor
-2. Any computer with Internet access should work. Latest versions of Chrome and Firefox browsers are preferable.
+1. You should have a working VirtualBox setup with enough processor and memory capacity on your local computer
+2. A small Linux-based appliance (Dr. Khan's students will receive one through the assignment page) or ability to install a lightweight Linux system from ISO files within VirtualBox.
+
+>**Any Linux-based VirtualBox virtual machine will work but the instructions given here are for Ubuntu Server 16.04 or prior.**
+>**Dr. Khan's students are advised to use the appliance provided with the assignment
 
 #### Background Knowledge
 
 1. Familiarity with virtualization concepts and basic working knowledge of Linux command line will be beneficial but not required.
 2. Understanding of Network Addresses, Dynamic versus Static IP configuration of hosts, and theory on decision making at hosts and routers as they decide how to forward Layer 3 datagrams.
 
->**Note**: you can finish most of the tasks (except Key Pair generation) below from the Network Topology view in the OpenStack Dashboard (Project->Network->Network Topology). The Graph view with "Toggle Labels" will present a nice picture of what you're building. It's a great way to understand networking concepts!
-
 ## Create your networks
 
-You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
-
->Use the below values/inputs [while following the instructions on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md).
+You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IPv4 addresses and network addresses appears below. You may choose your own network addresses if you wish (it'll be good practice).
 
 ### Create first network - "network-1"
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `network-1` (just a name, always try to give descriptive names to your cloud resources)
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
@@ -48,6 +49,8 @@ You'll create private networks on which you'll launch your instances and router(
 
 ### Create second network - "network-2"
 
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
+
 1. Network Name: `network-2`
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
 3. Subnet:
@@ -62,7 +65,7 @@ You'll create private networks on which you'll launch your instances and router(
 
 ## Create a router that connects network-1 with network-2
 
-Use the below values/inputs [while following the instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md).
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-router.md).
 
 1. Router name: `router-1`
 2. External Network: LEAVE BLANK
@@ -71,17 +74,17 @@ Use the below values/inputs [while following the instructions on how to create a
 4. Add a second interface to this router on your `network-2-subnet`:
    * IP Address: `192.168.2.1` (this will be the gateway for all instances launched in your network-2-subnet)
 
-## Create Key Pair (if needed)
+## Launch Your Instances
 
-If you don't already have a Key Pair setup, create a SSH Key Pair and download to save in your .ssh directory. Use the below values/inputs [while following the instructions on how to create a key pair in OpenStack Dashboard here](../../tasks/openstack/create-key-pair.md).
+### (If you don't already have a Key Pair setup): Create a SSH Key Pair and download to save in your .ssh directory
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
-## Launch Your Instances
-
->Use the below values/inputs [while following the instructions on how to launch a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).
-
 ### Launch Linux instance; "machine-A" on network-1
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-A`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -93,6 +96,8 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 ### Launch Linux instance; "machine-B" on network-1
 
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+
 1. Instance name: `machine-B`
 2. Source Image: `Ubuntu-16-04` (no volumes)
 3. Flavor: `m1.nano`
@@ -102,6 +107,8 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 7. IMPORTANT - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
 
 ### Launch Linux instance; "machine-C" on network-2
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-C`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -131,11 +138,14 @@ Ping from machine-B to machine-C and vice-versa
 
 Examine how hosts within the same network (here machine-A and machine-B communicate) at Layer 3. Similarly, examine how hosts send the Layer 3 datagrams to the default gateway for moving packets across networks. Complete the assigned readings.
 
+## Cleaning up after you're done
+
+1. Shutdown and delete the instances
+2. Delete each of the interfaces on your router
+3. Delete the router itself
+4. Delete the network you created (you may have to ensure you delete all ports on this network first if you get error message when trying to delete the network)
+
 ## Learning Check - "Why this works?"
-
->Let's take the figure below to discuss this lab. **Your setup in terms of IP addresses may be different**.
-
-![Example setup for lab discussion](../../assets/images/two-networks-one-router-example.png)
 
 ### machine-A and machine-B connectivity
 
@@ -146,7 +156,8 @@ These machines are on the same network as both the following are true:
 
 #### Expand your knowledge
 
-Examine Routing Tables of both machine-A and machine-B. Use any of the following commands on the command prompt of the instances:
+Examine Routing Tables of both machine-A and machine-B
+Use any of the following commands on the command prompt of the instances:
 
 * `route -nv`
 * `netstat -r`
@@ -172,6 +183,11 @@ So, routing for a packet going from machine-A to machine-C works as follows:
 
 Examine Routing Tables of both machine-A and machine-C. Please study the row(s) in the routing table and understand how the default routes help the machines send the packets to their router (gateway) when the destination IP addresses of any packets are not on the same network as the machines themselves.
 
-## Cleanup cloud resources after you're done
+## Cleanup your environment
 
-It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. When deleting resources you have to follow a certain order (typically the reverse of how you created them...). For example, in the setup above, we'd have to shutdown and delete the instances first, then delete the interfaces on the router(s), then delete the router(s). Deleting a router with existing interfaces will not work.... and so on. Do the following in order listed.
+
+1. Shutdown and delete your instances
+2. Delete the interfaces on the router(s)
+3. Delete the router(s)
+4. Delete the network(s)

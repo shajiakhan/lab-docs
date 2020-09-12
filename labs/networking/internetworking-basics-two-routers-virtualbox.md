@@ -2,23 +2,23 @@
 
 ## Lab Purpose
 
-This lab will help build on your knowledge of internetworking to connect three networks together using two routers and static routing; while working in OpenStack.
+This lab will help build on your knowledge of internetworking to connect three networks together using two routers and static routing.
 
 ### Learning Outcomes
 
 Upon completion of this lab, you will be able to:
 
-1. Create virtual networks in OpenStack based cloud environments
-2. Create and deploy IP networks
-3. Create and configure routers to interconnect networks using static routes
+1. Create of virtual networks in OpenStack
+2. Create and deploy IP networks.
+3. Create and configure routers to interconnect networks using static routes.
 4. Describe routing process as initiating at the host
-5. Describe routing process at a router and use of additional routes (here static routes) to make routers aware of remote networks
+5. Describe routing process at a router
 
 ### Prerequisites
 
 #### Environment
 
-1. You should have already received instructions on logging into the OpenStack lab environment from your instructor
+1. You should have already received instructions on logging into the lab environment from your instructor
 2. Any computer with Internet access should work. Latest versions of Chrome and Firefox browsers are preferable.
 
 #### Background Knowledge
@@ -33,9 +33,9 @@ Upon completion of this lab, you will be able to:
 
 You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
 
->Use the below values/inputs [while following the general instructions on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md). Be sure you use the values specified below and not the ones in the general instructions.
-
 ### Create first network - "network-1"
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `network-1` (just a name, always try to give descriptive names to your cloud resources)
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
@@ -45,20 +45,23 @@ You'll create private networks on which you'll launch your instances and router(
    * Gateway IP: `192.168.1.1`
    * Subnet Details:
       1. DHCP enabled
-      2. DHCP Allocation Pools: `192.168.1.10,192.168.1.254`
+      2. DHCP Allocation Pools: `192.168.1.10,192.168.1.59`
       3. DNS SERVER: (not needed, leave blank; as these are test networks with no outside connectivity)
       4. Rest of the configuration either blank or default
 
 ### Create second network - "network-2"
 
-This will be a network between the two routers. You can imagine this as a Wide Area Network connection with a point-to-point link. For now, we'll simply use a /29 network to model this idea. A /29 network will give us 8 total (2^(32-29)) and 6 usable ((2^(32-29))-2) IP addresses. This is more than the two needed for a point-to-point link but gives us flexibility for growth if needed.
+This will be a network between the two routers. You can imagine this as a Wide Area Network connection with a point-to-point link. For now, we'll simply use a /30 network to model this idea.
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
 
 1. Network Name: `network-2` (just a name, always try to give descriptive names to your cloud resources)
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
 3. Subnet:
    * Subnet Name: `network-2-subnet`
-   * Network Address: `192.168.2.248/29` (We're making this network /29. We'll reserve 192.168.2.249 for a future gateway in case we need it. We'll use 192.168.2.250 for router-1 and 102.168.2.251 for router 2.)
-   * Gateway IP: `192.168.2.249` (this is currently not being used by any router... just entering it as a placeholder)
+   * Network Address: `192.168.2.248/29`
+   We're making this network /29. We'll reserve 192.168.2.249 for a future gateway in case we need it. We'll use 192.168.2.250 for router-1 and 102.168.2.251 for router 2
+   * Gateway IP: `192.168.2.249`
    * Disable Gateway: `unchecked (enabled)`
    * Subnet Details:
       1. Enable DHCP `unchecked (disabled)`
@@ -68,6 +71,8 @@ This will be a network between the two routers. You can imagine this as a Wide A
 
 ### Create third network - "network-3"
 
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-network.md).
+
 1. Network Name: `network-3`
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
 3. Subnet:
@@ -76,24 +81,24 @@ This will be a network between the two routers. You can imagine this as a Wide A
    * Gateway IP: `192.168.3.1`
    * Subnet Details:
       1. DHCP enabled
-      2. DHCP Allocation Pools: `192.168.3.10,192.168.3.254`
+      2. DHCP Allocation Pools: `192.168.3.10,192.168.3.59`
       3. DNS SERVER: (not needed, leave blank; as these are test networks with no outside connectivity)
       4. Rest of the configuration either blank or default
 
-## Create your routers
-
->Use the below values/inputs [while following the general instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md). Be sure you use the values specified below and not the ones in the general instructions.
-
 ### Create first router (router-1) that connects network-1 with network-2
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-router.md).
 
 1. Router name: `router-1`
 2. External Network: LEAVE BLANK
-3. Add an interface to this router on your `network-1-subnet`:
+3. Add a interface to this router on your `network-1-subnet`:
    * IP Address: `192.168.1.1` (this will be the gateway for all instances launched in your network-2-subnet)
 4. Add second interface to this router on your `network-2-subnet`:
    * IP Address: `192.168.2.250`
 
 ### Create second router (router-2) that connects network-2 with network-3
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-router.md).
 
 1. Router name: `router-2`
 2. External Network: LEAVE BLANK
@@ -104,17 +109,17 @@ This will be a network between the two routers. You can imagine this as a Wide A
 
 >**Note:** We also need to add static routes on each router for the corresponding "remote" network. We're going to do that later after we test existing setup and understand that it's not going to work without static routes.
 
-## Create Key Pair (if needed)
+## Launch Your Instances
 
-If you don't already have a Key Pair setup, create a SSH Key Pair and download to save in your .ssh directory. Use the below values/inputs [while following the instructions on how to create a key pair in OpenStack Dashboard here](../../tasks/openstack/create-key-pair.md).
+### (If you don't already have a Key Pair setup): Create a SSH Key Pair and download to save in your .ssh directory
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/create-key-pair.md).
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
-## Launch Your Instances
-
->Use the below values/inputs [while following the general instructions on how to launch a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).  Be sure you use the values specified below and not the ones in the general instructions.
-
 ### Launch Linux instance; "machine-A" on network-1
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-A`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -126,6 +131,8 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 ### Launch Linux instance; "machine-B" on network-1
 
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+
 1. Instance name: `machine-B`
 2. Source Image: `Ubuntu-16-04` (no volumes)
 3. Flavor: `m1.nano`
@@ -135,6 +142,8 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 7. IMPORTANT - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
 
 ### Launch Linux instance; "machine-C" on network-3
+
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 1. Instance name: `machine-C`
 2. Source Image: `Ubuntu-16-04` (no volumes)
@@ -150,8 +159,6 @@ The launch [instance instructions](../../tasks/openstack/launch-ubuntu-instance.
 
 ## Test connectivity
 
-### Test connectivity within network-1
-
 >This test should be successful.
 
 Connect to machine-A from the console and check it's IP address.
@@ -162,7 +169,7 @@ Connect to machine-B in another browser window and check it's IP address.
 
 ### Test connectivity across networks
 
->This test should **not** work.
+>This test should not work.
 
 Connect to machine-C in another browser window and check it's IP address.
 
@@ -171,11 +178,17 @@ Connect to machine-C in another browser window and check it's IP address.
 
 These tests should fail. The reason is that router-1 currently DOES NOT know about network-3. Think about it this way: router-1 is directly connected to network-1 and network-2. Any Layer 3 datagram destined for network-1 or network-2 will be forwarded by the router-1 because it has routes for both networks. However router-1 currently has no route for network-3.
 
-Similarly, router-2 has routes for network-2 and network-3 but currently has no route for network-1. **So now we need to let router-1 know about network-3 and let router-2 know about network-1 by adding Static Routes on each router**
+Similarly, router-2 has routes for network-2 and network-3 but currently has no route for network-1.
+
+#### Check router-1 and router-2 routing tables to confirm that router-1 has no route to network-3 and router-2 has no route to network-1
+
+On each router issue the command: `route -nv`
+
+You should only see two routes on each router. The two routes are for the directly connected networks. **So now we need to let router-1 know about network-3 and let router-2 know about network-1 by adding Static Routes on each router**
 
 ## Add Static Routes
 
->Use the below values/inputs [while following the general instructions on how to add static routes on a router in OpenStack Dashboard here](../../tasks/openstack/add-static-routes.md). Be sure you use the values specified below and not the ones in the general instructions.
+Use the below values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
 
 ### Static route to network-3 on router-1
 
@@ -202,10 +215,6 @@ Examine how hosts within the same network (here machine-A and machine-B communic
 
 ## Learning Check - "Why this works?"
 
->Let's take the figure below to discuss this lab. **Your setup in terms of IP addresses may be different**.
-
-![Example setup for lab discussion](../../assets/images/three-networks-two-routers-example.png)
-
 ### machine-A and machine-B connectivity
 
 These machines are on the same network as both the following are true:
@@ -213,7 +222,7 @@ These machines are on the same network as both the following are true:
 1. They are connected into the same layer 2 network. Think of the physical switch analogy. In OpenStack you put both the machines on the same internal network called network-1. This would be analogous to we plugging the machines’ network cables to a switch.
 2. They are on the same layer 3 network. Think both machine-A and machine-B have IPv4 addresses from the same IP network. That is, both machines’ IP addresses have the same network address prefix. In the example, machine-A’s IP 192.168.1.2/24 and machine-B’s IP 192.168.1.3/24 are on the same network address 192.168.1.0/24. Then you used ping (a small program used to send some arbitrary data to another machine and see if it responds) as the “application” sending/receiving data.
 
-#### Expand your knowledge - 1
+#### Expand your knowledge
 
 Examine Routing Tables of both machine-A and machine-B
 Use any of the following commands on the command prompt of the instances:
@@ -237,14 +246,20 @@ So, routing for a packet going from machine-A to machine-C works as follows:
 * machine-A examines the destination address and figures out that the destination IP is NOT on the same network as machine-A.
 * So, it sends the packet to the default gateway (192.168.1.1) using the default route in machine-A’s routing table.
 * router-1 receives that packet from its first interface (192.168.1.1) and examines the destination address (192.168.3.2). It figures out that the destination IP 192.168.3.2 matches the static route entry in its routing table (the one we added earlier) that matches all IPs in the 192.168.3.0/24 network.
-* Based on the static route, router-1 knows that to get to the 192.168.3.0/24 network, it must send the Layer 3 datagram to 192.168.2.251 which is the Next Hop. Thus, it forwards that packet out of its second interface toward 192.168.2.251.
-* The Layer 3 datagram then arrives at router-2 which examines the destination IP (again it's machine-C's IP; 192.168.3.2). The router-2 looks at its routing table and finds the directly connected route that matches all IP addresses in the 192.168.3.0/24. It looks at the outgoing interface in that route and simply sends it out of that interface (here the second interface connected to network-3) toward machine-C.
 
-#### Expand your knowledge - 2
+Based on the static route, router-1 knows that to get to the 192.168.3.0/24 network, it must send the Layer 3 datagram to 192.168.2.251 which is the Next Hop. Thus, it forwards that packet out of its second interface toward 192.168.2.251.
 
-* See if you can trace the steps back from machine-C to machine-A similar to the steps given for machine-A to machine-C above.
-* Examine Routing Tables of both machine-A and machine-C. Please study the row(s) in the routing table and understand how the default routes help the machines send the packets to their router (gateway) whenever the destination IP address of a Layer 3 datagram is not on the same network as the machines themselves.
+The Layer 3 datagram then arrives at router-2 which examines the destination IP (again it's machine-C's IP; 192.168.3.2). The router-2 looks at its routing table and finds the directly connected route that matches all IP addresses in the 192.168.3.0/24. It looks at the outgoing interface in that route and simply sends it out of that interface (here the second interface connected to network-3) toward machine-C.
+
+#### Expand your knowledge - compare routing tables
+
+Examine Routing Tables of both machine-A and machine-C. Please study the row(s) in the routing table and understand how the default routes help the machines send the packets to their router (gateway) when the destination IP addresses of any packets are not on the same network as the machines themselves.
 
 ## Cleanup cloud resources after you're done
 
-It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.
+It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. When deleting resources you have to follow a certain order (typically the reverse of how you created them...). For example, in the setup above, we'd have to shutdown and delete the instances first, then delete the interfaces on the router(s), then delete the router(s). Deleting a router with existing interfaces will not work.... and so on. Do the following in order listed.
+
+1. Shutdown and delete your instances
+2. Delete the interfaces on the router(s)
+3. Delete the router(s)
+4. Delete the network(s) you created (you may have to ensure you delete all ports on this network first if you get error message when trying to delete the network)
