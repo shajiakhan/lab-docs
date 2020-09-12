@@ -81,11 +81,10 @@ With all the steps above, you're now ready to launch a Kali Linux instance. Use 
 4. Network: `ssoid-net` (you created this network earlier;)
 5. Security Group: `Default` (no need to create one, this is already present. Every OpenStack project comes with a Default security group that blocks all incoming traffic to the instances in that group and allows all outgoing traffic.)
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
-7. IMPORTANT: **SKIP** the section on configuration script for setting password listed in the instructions link above. The default password is already set on the Kali image and listed below.
 
 ## Access your instance through the browser using HTML 5 console (noVNC)
 
-The launch [instance instructions](../../tasks/openstack/launch-kali-instance.md#accessing-your-kali-instance-through-the-browser-console) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing.
+The launch [instance instructions](../../tasks/openstack/launch-kali-instance.md#accessing-your-kali-linux-instance-through-the-browser-console) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing.
 
 You can login with:
 
