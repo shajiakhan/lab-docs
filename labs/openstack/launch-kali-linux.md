@@ -6,7 +6,7 @@ This lab will help you launch a Kali Linux instance to get you started on learni
 
 ### Learning Outcomes
 
-1. Identify basic compoenents of an Infrastructure as a Service (IaaS) cloud management platform such as OpenStack
+1. Identify basic components of an Infrastructure as a Service (IaaS) cloud management platform such as OpenStack
 2. Create a Kali Linux instance and verify operation
 3. Ability to launch a simple test virtual machine instance
    * Creating key-pair
@@ -73,7 +73,7 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 ## Launch a Kali Linux instance
 
-With all the steps above, you're now ready to launch a Kali Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-ubuntu-instance.md).
+With all the steps above, you're now ready to launch a Kali Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-kali-instance.md).
 
 1. Instance name: `ssoid-kali`
 2. Source Image: `kali2019-4` (no volumes)
@@ -85,7 +85,7 @@ With all the steps above, you're now ready to launch a Kali Linux instance. Use 
 
 ## Access your instance through the browser using HTML 5 console (noVNC)
 
-The launch [instance instructions](../../tasks/openstack/launch-ubuntu-instance.md#accessing-your-ubuntu-instance-through-the-browser-console) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing. 
+The launch [instance instructions](../../tasks/openstack/launch-kali-instance.md#accessing-your-kali-instance-through-the-browser-console) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing.
 
 You can login with:
 
