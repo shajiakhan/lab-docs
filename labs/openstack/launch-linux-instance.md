@@ -74,7 +74,7 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 ## Launch an Linux instance
 
-With all the steps above, you're now ready to launch an Linux instance. 
+With all the steps above, you're now ready to launch an Linux instance.
 
 >Use the below values/inputs [while following the instructions on how to launch a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).
 
