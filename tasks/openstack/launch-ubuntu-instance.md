@@ -25,10 +25,10 @@ Log in to the OpenStack dashboard. Be sure you have selected the appropriate pro
    * On the Source tab:
       * Select Boot Source: Image
       * Create New Voume: No
-      * Scroll down to see list of Ubuntu Images available. Click on the Up Arrow next to the one you wish to use (e.g., `Ubuntu-18-04` signifying Ubuntu 18.04 LTS edition)
+      * Scroll down to see list of Ubuntu Images available. Click on the Up Arrow next to the one you wish to use or select the one your instructor specified (e.g., `Ubuntu-18-04` signifying Ubuntu 18.04 LTS edition)
       * Click Next
    * On the Flavor tab:
-      * Select flavor `m1.small` (click Up Arrow next to it) unless specified otherwise by your instructor. This flavor will allot 1 virtual CPU, 1GB RAM, and 10GB of hard disk space to your instance.
+      * Select flavor `s1.small` (click Up Arrow next to it) unless specified otherwise by your instructor. This flavor will allot 1 virtual CPU, 1GB RAM, and 10GB of hard disk space to your instance.
       * Click Next
    * On the Networks tab:
       * Select the network you are launching this instance on; from the "Available" section and move it to the Allocated section by clicking on the Up Arrow next to your network (e.g., `ssoid-lab6`)
