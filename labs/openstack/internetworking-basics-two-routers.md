@@ -118,7 +118,7 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 1. Instance name: `machine-A`
 2. Source Image: `Ubuntu-16-04` (no volumes)
-3. Flavor: `m1.nano`
+3. Flavor: `s1.small`
 4. Network: `network-1` (you created this network earlier;)
 5. Security Group: `Default` (no need to create one, this is already present. Every OpenStack project comes with a Default security group that blocks all incoming traffic to the instances in that group and allows all outgoing traffic.)
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
@@ -128,7 +128,7 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 1. Instance name: `machine-B`
 2. Source Image: `Ubuntu-16-04` (no volumes)
-3. Flavor: `m1.nano`
+3. Flavor: `s1.small`
 4. Network: `network-1` (you created this network earlier;)
 5. Security Group: `Default` (no need to create one, this is already present. Every OpenStack project comes with a Default security group that blocks all incoming traffic to the instances in that group and allows all outgoing traffic.)
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
@@ -138,7 +138,7 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 1. Instance name: `machine-C`
 2. Source Image: `Ubuntu-16-04` (no volumes)
-3. Flavor: `m1.nano`
+3. Flavor: `s1.small`
 4. Network: `network-3` (you created this network earlier;)
 5. Security Group: `Default` (no need to create one, this is already present. Every OpenStack project comes with a Default security group that blocks all incoming traffic to the instances in that group and allows all outgoing traffic.)
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
