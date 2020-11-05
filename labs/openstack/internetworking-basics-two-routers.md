@@ -248,3 +248,13 @@ So, routing for a packet going from machine-A to machine-C works as follows:
 ## Cleanup cloud resources after you're done
 
 It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.
+
+## Challenge
+
+Try to complete the following using similar logic for planning and implementation.
+
+1. Three routers in a series setup using static routes. Machines, A, B, and C should be able to communicate with each other.
+![Three routers in a series using static routes](../../assets/images/internetworking-three-routers-series-challenge.png)
+
+2. Three routers in a "mesh" setup using static routes. Machines, A, B, and C should be able to communicate with each other. Also, the machines should be able to communicate out to the Internet.
+![Three routers in a mesh using static routes](../../assets/images/internetworking-three-routers-mesh-challenge-2.png)
