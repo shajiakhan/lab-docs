@@ -249,7 +249,7 @@ So, routing for a packet going from machine-A to machine-C works as follows:
 
 It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.
 
-## Challenge
+## Challenge (optional)
 
 Try to complete the following using similar logic for planning and implementation.
 
