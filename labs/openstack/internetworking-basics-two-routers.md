@@ -29,11 +29,21 @@ Upon completion of this lab, you will be able to:
 
 >**Note**: you can finish most of the tasks (except Key Pair generation) below from the Network Topology view in the OpenStack Dashboard (Project->Network->Network Topology). The Graph view with "Toggle Labels" will present a nice picture of what you're building. It's a great way to understand networking concepts!
 
+## Sample Network Planning
+
+All steps in the rest of this lab follow the sample network planning given in figure below.
+
+![Sample network setup used for this lab](../../assets/images/internetworking-two-routers-routing-basics-openstack.png)
+
+>**If you use your own network plan, please adjust all steps below accordingly.**
+
+Let's implement the planned setup by first creating our networks in OpenStack.
+
 ## Create your networks
 
 You'll create private networks on which you'll launch your instances and router(s) will interconnect the networks. You can create a network from the dashboard. While creating a network, you'll also create a Subnetwork. For the subnetwork, you can pick any RFC 1918 private Internet Protocol Version 4 (IPv4) block you wish. Example setup using private IP addresses and network addresses for IPv4 appears below. You may choose your own network addresses if you wish.
 
->Use the below values/inputs [while following the general instructions on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md). Be sure you use the values specified below and not the ones in the general instructions.
+>Use the below values/inputs [while following the general instructions on how to create a network in OpenStack Dashboard here](../../tasks/openstack/create-network.md). Be sure you use the values specified below and not the ones in the general instructions. Adjust values below if using your own network planning.
 
 ### Create first network - "network-1"
 
@@ -62,7 +72,7 @@ This will be a network between the two routers. You can imagine this as a Wide A
    * Disable Gateway: `unchecked (enabled)`
    * Subnet Details:
       1. Enable DHCP `unchecked (disabled)`
-      2. DHCP Allocation Pools: `192.168.2.250,192.168.2.254`
+      2. DHCP Allocation Pools: `192.168.2.250,192.168.2.254` (specify even though DHCP is not being used)
       3. DNS SERVER: (not needed, leave blank)
       4. Rest of the configuration either blank or default
 
@@ -82,7 +92,7 @@ This will be a network between the two routers. You can imagine this as a Wide A
 
 ## Create your routers
 
->Use the below values/inputs [while following the general instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md). Be sure you use the values specified below and not the ones in the general instructions.
+>Use the below values/inputs [while following the general instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md). Be sure you use the values specified below and not the ones in the general instructions. Adjust values below if using your own network planning.
 
 ### Create first router (router-1) that connects network-1 with network-2
 
@@ -112,7 +122,7 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 ## Launch Your Instances
 
->Use the below values/inputs [while following the general instructions on how to launch a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).  Be sure you use the values specified below and not the ones in the general instructions.
+>Use the below values/inputs [while following the general instructions on how to launch a linux instance in OpenStack Dashboard here](../../tasks/openstack/launch-ubuntu-instance.md).  Be sure you use the values specified below and not the ones in the general instructions. Adjust values below if using your own network planning.
 
 ### Launch Linux instance; "machine-A" on network-1
 
