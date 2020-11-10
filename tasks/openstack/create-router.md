@@ -19,7 +19,6 @@ To connect a private network to the newly created router, perform the following 
 3. In the Add Interface dialog box, select a Subnet.
 4. Optionally, in the Add Interface dialog box, set an IP Address for the router interface for the selected subnet. If you choose not to set the IP Address value, then by default OpenStack Networking uses the first host IP address in the subnet. In other words, this is the "gateway ip" for the private network. For example, if your subnet is 10.1.2.0/24 then this IP will be 10.1.2.1.
 5. The Router Name and Router ID fields are automatically updated.
-
-Click Add Interface.
+6. Click Add Interface.
 
 You have successfully created the router. You can view the new topology from the Network Topology tab.

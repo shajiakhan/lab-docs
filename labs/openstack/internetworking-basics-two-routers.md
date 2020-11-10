@@ -98,18 +98,28 @@ This will be a network between the two routers. You can imagine this as a Wide A
 
 1. Router name: `router-1`
 2. External Network: LEAVE BLANK
-3. Add an interface to this router on your `network-1-subnet`:
+
+#### Create two interfaces on router-1
+
+Once router-1 is created, add two interfaces:
+
+1. Add an interface to this router on your `network-1-subnet`:
    * IP Address: `192.168.1.1` (this will be the gateway for all instances launched in your network-2-subnet)
-4. Add second interface to this router on your `network-2-subnet`:
+2. Add second interface to this router on your `network-2-subnet`:
    * IP Address: `192.168.2.250`
 
 ### Create second router (router-2) that connects network-2 with network-3
 
 1. Router name: `router-2`
 2. External Network: LEAVE BLANK
-3. Add interface to this router on your `network-2-subnet`:
+
+#### Create two interfaces on router-2
+
+Once router-2 is created, add two interfaces:
+
+1. Add interface to this router on your `network-2-subnet`:
    * IP Address: `192.168.2.251`
-4. Add a second interface to this router on your `network-3-subnet`:
+2. Add a second interface to this router on your `network-3-subnet`:
    * IP Address: `192.168.3.1` (this will be the gateway for all instances launched in your network-3-subnet)
 
 >**Note:** We also need to add static routes on each router for the corresponding "remote" network. We're going to do that later after we test existing setup and understand that it's not going to work without static routes.
