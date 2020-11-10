@@ -57,7 +57,7 @@ This will be a network between the two routers. You can imagine this as a Wide A
 2. Other inputs/check boxes: Not Shared; Admin State enabled; and create a subnet.
 3. Subnet:
    * Subnet Name: `network-2-subnet`
-   * Network Address: `192.168.2.248/29` (We're making this network /29. We'll reserve 192.168.2.249 for a future gateway in case we need it. We'll use 192.168.2.250 for router-1 and 102.168.2.251 for router 2.)
+   * Network Address: `192.168.2.248/29` (We're making this network /29. We'll reserve 192.168.2.249 for a future gateway in case we need it. We'll use 192.168.2.250 for router-1 and 192.168.2.251 for router 2.)
    * Gateway IP: `192.168.2.249` (this is currently not being used by any router... just entering it as a placeholder)
    * Disable Gateway: `unchecked (enabled)`
    * Subnet Details:
