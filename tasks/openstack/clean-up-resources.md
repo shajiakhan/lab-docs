@@ -2,9 +2,11 @@
 
 It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. Cloud resources cost money and unattended cloud assets increase the attack surface of your organization.
 
-When deleting resources you have to follow a certain order. **Typically, you delete/remove things in the reverse order of how you created them**.
+## How to delete cloud resources in OpenStack
 
-For example, we should typically shutdown and delete the instances first but if there are storage volumes attached to the instance then you should detach the volumes before deleting the instances. Simiarly, if a router has interfaces on it beyond the gateway ones or static routes added, then delete the interfaces on the router(s) and delete the static route(s), before deleting the router(s). Deleting a router with existing interfaces will not work.... and so on.
+When deleting unneeded cloud resources you have to follow a certain order. **Typically, you delete/remove things in the reverse order of how you created them**.
+
+For example, we should typically shutdown and delete the instances first but if there are storage volumes attached to the instance then you should detach the volumes before deleting the instances. Similarly, if a router has interfaces on it beyond the gateway ones or static routes added, then delete the interfaces on the router(s) and delete the static route(s), before deleting the router(s). Deleting a router with existing interfaces will not work.... and so on.
 
 *In general*, do the following in order listed. **Not all steps may apply to you depending on your setup**
 
