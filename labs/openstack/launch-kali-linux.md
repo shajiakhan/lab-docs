@@ -2,7 +2,7 @@
 
 ## Lab Purpose
 
-This lab will help you launch a Kali Linux instance to get you started on learning more about Penetration Testing (Pentesting).
+This lab will help you launch a Kali Linux instance in OpenStack to get you started on learning more about Penetration Testing (Pentesting).
 
 ### Learning Outcomes
 
