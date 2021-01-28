@@ -62,7 +62,7 @@ If you don't already have a Key Pair setup, create a SSH Key Pair and download t
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
-## Launch a Kali Linux instance
+## Lab Task 3: Launch a Kali Linux instance
 
 With all the steps above, you're now ready to launch a Kali Linux instance. Use the following values/inputs [while following the instructions here](../../tasks/openstack/launch-kali-instance.md).
 
@@ -73,7 +73,7 @@ With all the steps above, you're now ready to launch a Kali Linux instance. Use 
 5. Security Group: `Default` (no need to create one, this is already present. Every OpenStack project comes with a Default security group that blocks all incoming traffic to the instances in that group and allows all outgoing traffic.)
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
 
-## Access your instance through the browser using HTML 5 console (noVNC)
+## Lab Task 4: Access your instance through the browser using HTML 5 console (noVNC)
 
 The launch [instance instructions](../../tasks/openstack/launch-kali-instance.md#accessing-your-kali-linux-instance-through-the-browser-console) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing.
 
@@ -84,6 +84,6 @@ You can login with:
 
 (It's good to change your password upon first login)
 
-## Cleanup cloud resources after you're done
+## Lab Task 5: Cleanup cloud resources after you're done
 
 It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.
