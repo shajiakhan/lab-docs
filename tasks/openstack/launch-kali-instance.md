@@ -6,7 +6,7 @@ The steps below apply for most use cases. Your instructor will provide specific 
 
 You should have already:
 
-1. [Created a network, a subnet](create-network.md) within that network, and a [router](create-router.md) connected to that network (in most use cases) which also connects to an external network
+1. [Created a network, and a subnet](create-network.md) within that network. You cannot launch an instance without first creating a network to launch the instance on.
 2. Created a [Key Pair](create-key-pair.md)
 3. Configured a security group for this instance as needed unless the default security group works for your use case
 
@@ -37,7 +37,7 @@ Log in to the OpenStack dashboard. Be sure you have selected the appropriate pro
    * On the Security Groups tab:
       * Select the security group you created or choose `Default` if your instructor did not specify any requirements. The "Default" security group will likely already be selected under "Allocated". If you need a different security group, click on the Down Arrow next to Default to remove it from Allocated section and assign a different one. If another security group is not present in the list, you'll have to cancel wizard, create it first, and then start launch instance wizard again.
    * On the Key Pair tab:
-      * Select the Key Pair you created and move to Allocated by clicking on the Up Arrow.
+      * Select the Key Pair you created earlier and move to Allocated by clicking on the Up Arrow.
    * Skip through the next sections: Server Groups, Scheduler Hints, and Metadata; unless specified otherwise by your instructor, by clicking next.
 
 4. Click Launch Instance to start the instance creation process.

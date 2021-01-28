@@ -1,8 +1,8 @@
-# Pentesting Basics - Launch a sandboxed Kali Linux Instance in OpenStack Cloud
+# Pentesting Basics - Launch a Kali Linux Instance in OpenStack Cloud
 
 ## Lab Purpose
 
-This lab will help you launch a Kali Linux instance in OpenStack to get you started on learning more about Penetration Testing (Pentesting). Here you'll launch Kali instance in a network that's not connected to the outside world (sandboxed).
+This lab will help you launch a Kali Linux instance in OpenStack to get you started on learning more about Penetration Testing (Pentesting).
 
 ### Learning Outcomes
 
@@ -11,7 +11,7 @@ This lab will help you launch a Kali Linux instance in OpenStack to get you star
 3. Ability to launch a simple test virtual machine instance
    * Creating key-pair
    * Selecting “flavors”
-   * Creating a sandboxed network on which the instance will be launched
+   * Creating a network on which the instance will be launched
    * Accessing the Virtual Machine through the browser using HTML 5 consoles
 
 ### Prerequisites
@@ -53,8 +53,17 @@ You'll create your own private network on which you'll launch your instance. You
    * Subnet Details:
       1. DHCP enabled
       2. DHCP Allocation Pools: `192.168.1.10,192.168.1.59`
-      3. DNS SERVER: Leave blank as you are not connecting instances on this network to the Internet
+      3. DNS SERVER: Enter your DNS server IP addresses one on each line ( `Your instructor will provide you with these`)
       4. Rest of the configuration either blank or default
+
+### Create a router that connects your network with an "external" network for Internet access
+
+>Use the below values/inputs [while following the instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md).
+
+1. Router name: `ssoid-router` (replace with your ssoid or username)
+2. External Network: Choose the external network (`Your instructor will provide you with the name of the external network`). Simply, choosing this network as your "external" network means your router will have an interface on this network much like your home router connects to your Internet Service Provider's network).
+3. Add a second interface to this router on your ssoid-net-subnet:
+   * IP Address: `192.168.1.1` (this will be the gateway for all instances launched in your ssoid-net-subnet)
 
 ### Create a SSH Key Pair and download to save in your .ssh directory
 
