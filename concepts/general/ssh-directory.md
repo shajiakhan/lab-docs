@@ -4,11 +4,13 @@ When working in cloud environments (e.g., launching a Linux instance in AWS) use
 
 **When creating or downloading keys, you should store them in the .ssh directory.** The ``.ssh`` directory (folder) is a hidden directory (the ``.`` before name implies a directory is hidden). The .ssh directory is typically found in the user's home directory.
 
-> On Linux: ``/home/your_username/.ssh``
+>
+>On Linux: ``/home/your_username/.ssh``
 >
 > On MacOS: ``/Users/your_username/.ssh``
 >
 > On Windows: ``C:\Users\your_username\.ssh``
+>
 
 The .ssh directory is used to hold SSH keys (and other types of keys and some other types of files such as known_hosts etc.).
 
@@ -35,9 +37,11 @@ If going through Finder, please ensure hidden file view is enabled: ``Shift + Co
 If hidden view is enabled and you still cannot locate the .ssh directory under your home directory, you could simply create one and set proper permissions on the directory.
 
 Open Terminal and issue the following commands:
-> ``mkdir ~/.ssh`` (create directory .ssh in home folder, the ~ is path to your home directory /Users/your_username)
 >
-> ``chmod 700 ~/.ssh`` (set full read/write/execute permissions for yourself and deny any permissions to all others)
+>1. ``mkdir ~/.ssh`` (create directory .ssh in home folder, the ~ is path to your home directory /Users/your_username)
+>
+>2. ``chmod 700 ~/.ssh`` (set full read/write/execute permissions for yourself and deny any permissions to all others)
+>
 
 Continue by storing keys in this folder from now on and be sure to set proper permissions on the key itself (as shown above)
 
