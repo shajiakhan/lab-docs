@@ -11,7 +11,7 @@ See some tips below if you are not sure how to save key files to this directory.
 
 ## MAC/Linux Users
 
-MAC and Linux users will have the .ssh directory in their home directory (typically /home/your_username/.ssh). Just be sure to download the .pem private key file to your .ssh directory and set the appropriate file permissions (e.g., `chmod 0600 yourPrivateKey.pem`).
+MAC and Linux users will have the .ssh directory in their home directory (typically /home/your_username/.ssh). Just be sure to download the .pem private key file to your .ssh directory and set the appropriate file permissions (e.g., `chmod 400 yourPrivateKey.pem`).
 
 Windows users can check if the directory is already present. If yes, save the keys there. If directory is not present, simply create the directory.
 
@@ -27,7 +27,7 @@ If you get an error message, .ssh directory is not present. See how to create on
 
 ### Windows 10: Create the .ssh directory (IF NOT PRESENT) from PowerShell
 
-**The .ssh directory is within your home directory. Create the directory if it doesn't exist.** In Windows, the .ssh directory should typically be in "C:\Users\your_username\\.ssh" (replace your_username with your username of course).
+**The .ssh directory is within your home directory. Create the directory if it doesn't exist.** In Windows, the .ssh directory should typically be in "C:\Users\your_username\.ssh" (replace your_username with your username of course).
 
 ``mkdir -Path 'C:\Users\your_username\.ssh'`` (the . before ssh tells that this is a "hidden" directory.)
 
