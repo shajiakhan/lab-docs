@@ -57,7 +57,7 @@ You'll create your own private network on which you'll launch your instance. You
       3. DNS SERVER: Enter your DNS server IP addresses one on each line ( `Your instructor will provide you with these`)
       4. Rest of the configuration either blank or default
 
-## Lab Task 2-2: Create a router that connects your network with an "external" network for Internet access
+### Lab Task 2-2: Create a router that connects your network with an "external" network for Internet access
 
 >Use the below values/inputs [while following the instructions on how to create a router in OpenStack Dashboard here](../../tasks/openstack/create-router.md).
 
@@ -66,13 +66,13 @@ You'll create your own private network on which you'll launch your instance. You
 3. Add a second interface to this router on your ``ssoid-test-subnet``:
    * IP Address: `192.168.1.1` (this will be the gateway for all instances launched in your ssoid-test-subnet)
 
-## Lab Task 2-3: Create a SSH Key Pair and download to save in your .ssh directory
+### Lab Task 2-3: Create a SSH Key Pair and download to save in your .ssh directory
 
 If you don't already have a Key Pair setup, create a SSH Key Pair and download to save in your .ssh directory. Use the below values/inputs [while following the instructions on how to create a key pair in OpenStack Dashboard here](../../tasks/openstack/create-key-pair.md).
 
 1. Key Pair Name: `ssoid-key` (replace with your ssoid or username)
 
-## Lab Task 2-4: Launch the Linux instance
+### Lab Task 2-4: Launch the Linux instance
 
 With all the steps above, you're now ready to launch an Linux instance.
 
@@ -86,10 +86,10 @@ With all the steps above, you're now ready to launch an Linux instance.
 6. Key Pair: `ssoid-key` (you created this earlier with your ssoid or username)
 7. **IMPORTANT** - Configuration: Use a cloud-init script to set a password for your Ubuntu instance.
 
-## Lab Task 2-5: Access your instance through the browser using HTML 5 console (noVNC)
+### Lab Task 2-5: Access your instance through the browser using HTML 5 console (noVNC)
 
 The launch [instance instructions](../../tasks/openstack/launch-ubuntu-instance.md#accessing-your-ubuntu-instance-through-the-browser-console) provides details on how to access your instance through the browser itself. Once at the console, you click in the console and then start typing. You can login with the username `ubuntu` and the password you set in the configuration script during launch!
 
-## Lab Task 2-6: Cleanup cloud resources after you're done
+### Lab Task 2-6: Cleanup cloud resources after you're done
 
 It's always a good idea to delete/remove any **unwanted** cloud resources; as long as you're sure you don't need them. See [some guidelines how to clean up / delete cloud resources in OpenStack Dashboard here](../../tasks/openstack/clean-up-resources.md) if needed.
