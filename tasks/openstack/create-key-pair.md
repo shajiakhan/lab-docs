@@ -16,12 +16,12 @@ Create at least one key pair for each project. Create a Key Pair through the das
 4. Click the Key Pairs tab, which shows the key pairs that are available for this project.
 5. Click Create Key Pair.
 6. In the Create Key Pair dialog box, enter a name (best to use all lower case and no spaces) for your key pair.
-7. If available, under Key Type, choose "SSH Keys"
+7. If available, under Key Type, choose ``SSH Keys``
 8. Click Create Key Pair.
 9. The private key will be downloaded automatically.  **Warning: This will be the only time you will have the ability to download the private key. ALSO, BE SURE to save the key (it will be a .pem file) into your .ssh directory.**
 10. **Be sure to set properfile permissions on the private key file, (so that only you can read and write to the file)**
 
-> To set permissions, open Terminal on Mac or Git Bash on Windows and navigate to the .ssh directory and run the following command:
+> To set permissions, open Terminal on Mac/Linux or Git Bash on Windows and navigate to the .ssh directory and run the following command:
 >> `chmod 0400 yourPrivateKeyName.pem` (specify your keyname of course)
 >
 
