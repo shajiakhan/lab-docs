@@ -6,9 +6,10 @@ The steps below apply for most use cases. Your instructor will provide specific 
 
 You should have already:
 
-1. [Created a network, a subnet](create-network.md) within that network, and a [router](create-router.md) connected to that network (in most use cases) which also connects to an external network
-2. Created a [Key Pair](create-key-pair.md)
-3. Configured a security group for this instance as needed unless the default security group works for your use case
+1. [Created a network and a subnet](create-network.md) within that network.
+2. Created a [router](create-router.md) connected to that network (in most use cases) which also connects to an external network.
+3. Created a [Key Pair](create-key-pair.md)
+4. Configured a security group for this instance as needed unless the default security group works for your use case
 
 ## Launch Ubuntu instance with a dynamic IP address
 
