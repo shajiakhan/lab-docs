@@ -18,7 +18,7 @@ Just press ``Alt + Prnt Scrn`` to capture only the current window. Image is copi
 
 Try ``Windows Logo Key + Prnt Scrn`` to capture your entire screen. Your screen will blink for a second. You can now paste (Ctrl + v) in applications such as Word, Paint, etc.
 
-To find your saved screenshot, open File Explorer and go to ``Pictures -> Screenshots`` (full path is ``c:\\Users\your_username\Pictures\Screenshots``)
+To find your saved screenshot, open File Explorer and go to ``Pictures -> Screenshots`` (full path is ``c:\Users\your_username\Pictures\Screenshots``)
 
 ## Snip & Sketch
 
