@@ -5,7 +5,7 @@ When working in cloud environments (e.g., launching a Linux instance in AWS) use
 **When creating or downloading keys, you should store them in the .ssh directory.** The ``.ssh`` directory (folder) is a hidden directory (the ``.`` before name implies a directory is hidden). The .ssh directory is typically found in the user's home directory.
 
 >
->On Linux: ``/home/your_username/.ssh``
+> On Linux: ``/home/your_username/.ssh``
 >
 > On MacOS: ``/Users/your_username/.ssh``
 >
@@ -28,15 +28,21 @@ Just be sure to download or move the .pem private key file to your .ssh director
 
 Mac users will have their .ssh directory under their home directory:
 
-> /Users/your_username/.ssh
+> ``/Users/your_username/.ssh``
 
-Just be sure to download or move the .pem private key file to your .ssh directory and set the appropriate file permissions (e.g., `chmod 400 yourPrivateKey.pem`).
+Whether you just created the directory or it already existed, just be sure to download or move the .pem private key file to your .ssh directory and set the appropriate file permissions (e.g., `chmod 400 yourPrivateKey.pem`).
 
 If going through Finder, please ensure hidden file view is enabled: ``Shift + Command + .`` (press Shift key plus Command key plus the **.**  ((period)) key) while in Finder.
 
-If hidden view is enabled and you still cannot locate the .ssh directory under your home directory, you could simply create one and set proper permissions on the directory.
+If hidden view is enabled and you still cannot locate the .ssh directory under your home directory, you could simply create one and set proper permissions on the directory. See below.
 
-Open Terminal and issue the following commands:
+### Mac OS - Creating the .ssh directory if it doesn't exist
+
+To double check, open terminal and type in:
+
+> ``ls -ld ~/.ssh`` and hit enter. If you see the directory listed you're all set. If you see an error message that the directory doesn't exist then you can simply create it. 
+
+To create the directory and set proper permissions, open Terminal and issue the following commands, hitting return/enter after each:
 >
 >1. ``mkdir ~/.ssh`` (create directory .ssh in home folder, the ~ is path to your home directory /Users/your_username)
 >
