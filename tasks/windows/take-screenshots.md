@@ -35,3 +35,5 @@ Image is immediately copied to your clipboard and you'll also see a notification
 As virtual machines require keyboard and mouse input taken away from the host computer, it's best to ensure that the keyboard and mouse input are back to your host computer before taking a screenshot of a VM running in a VirtualBox Window.
 
 Typically, this can be easily done by just clicking OUT of the VirtualBox window (anywhere on your host computer screen). Once keyboard/mouse control is back to your host computer, you can use any of the above methods to take your screenshot.
+
+You can also use your host key (typically the right hand side ``CTRL`` key) to toggle control between your VM and your host computer.
