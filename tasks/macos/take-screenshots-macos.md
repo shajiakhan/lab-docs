@@ -43,3 +43,9 @@ If you also want to copy the screenshot while you take it then hold the ``contro
 ## Use the Screenshot App
 
 See [this support article for full instructions on using the Screenshot app to capture screenshots or video](https://support.apple.com/guide/mac-help/take-a-screenshot-or-screen-recording-mh26782/mac)
+
+## Screenshots of VirtualBox Virtual Machines
+
+As virtual machines require keyboard and mouse input taken away from the host computer, it's best to ensure that the keyboard and mouse input are back to your host computer before taking a screenshot of a VM running in a VirtualBox Window. Typically, this can be easily done by just clicking OUT of the VirtualBox window (anywhere on your host computer screen). Once keyboard/mouse control is back to your host computer, you can use any of the above methods to take your screenshot.
+
+You can also use your host key (typically the left hand side ``COMMAND`` key) to toggle control between your VM and your host computer.
