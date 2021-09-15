@@ -29,3 +29,9 @@ You can open Snip & Sketch from your programs or use keyboard shortcut.
 >
 
 Image is immediately copied to your clipboard and you'll also see a notification (bottom right) where you could open that image in Snip & Sketch to put simple annotations (e.g., higlight, simple shapes etc.). Once done, you can save the image to use it elsewhere (e.g., insert in Word through "Insert->Image...").
+
+## Screenshots of VirtualBox Virtual Machines
+
+As virtual machines require keyboard and mouse input taken away from the host computer, it's best to ensure that the keyboard and mouse input are back to your host computer before taking a screenshot of a VM running in a VirtualBox Window.
+
+Typically, this can be easily done by just clicking OUT of the VirtualBox window (anywhere on your host computer screen). Once keyboard/mouse control is back to your host computer, you can use any of the above methods to take your screenshot.
