@@ -44,12 +44,12 @@ To double check, open terminal and type in:
 
 To create the directory and set proper permissions, open Terminal and issue the following commands, hitting return/enter after each:
 >
->1. ``mkdir ~/.ssh`` (create directory .ssh in home folder, the ~ is path to your home directory /Users/your_username)
+>1. ``mkdir -p ~/.ssh`` (create directory .ssh in home folder, the ~ is path to your home directory /Users/your_username)
 >
 >2. ``chmod 700 ~/.ssh`` (set full read/write/execute permissions for yourself and deny any permissions to all others)
 >
 
-Continue by storing keys in this folder from now on and be sure to set proper permissions on the key itself (as shown above)
+Continue by storing keys in this folder from now on and be sure to set proper permissions on the keys themselves (as shown above)
 
 ## Windows Users
 
